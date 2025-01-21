@@ -4,6 +4,7 @@ import connectDataBase from "./database/db.js";
 import route from "./routes/user-auth-route.js";
 import homeRoute from "./routes/home-route.js";
 import adminRoute from "./routes/admin-route.js";
+import imageRouter from "./routes/images-route.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -18,6 +19,7 @@ connectDataBase();
 app.use("/api/auth", route);
 app.use("/api/home", homeRoute);
 app.use("/api/admin", adminRoute);
+app.use("/api/image", imageRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
