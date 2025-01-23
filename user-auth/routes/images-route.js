@@ -15,5 +15,11 @@ imageRouter.post(
 );
 
 imageRouter.get("/get", authValidation, imageControllers.getImages);
+imageRouter.delete(
+  "/:id",
+  authValidation,
+  adminMiddleWare,
+  imageControllers.deleteImage
+);
 
 export default imageRouter;
